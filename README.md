@@ -2,7 +2,12 @@
 
 GitHub: [luckee-core/monitor-react-native](https://github.com/luckee-core/monitor-react-native)
 
-Production thunk error reporting for **Ops Monitor** (`POST /api/monitoring/ingest`).
+Production thunk error reporting for **Ops Monitor** (always **HTTP POST** + ingest key).
+
+- **Supabase customers:** `ingestUrl` = ops Express `/api/monitoring/ingest`
+- **WomenHeart / Firestore:** `ingestUrl` = **Cloud Function** (`…/monitoringIngest`) — same env vars, different URL. The app never writes monitoring docs with the Firestore client SDK.
+
+`crudBackend: 'firestore'` only labels `resource` / `resourceId` in the payload; it does **not** remove the need for `ingestUrl` and `publicIngestKey`.
 
 ## Setup
 
