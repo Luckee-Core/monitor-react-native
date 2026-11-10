@@ -1,0 +1,23 @@
+{
+  "name": "@luckee-core/monitor-react-native",
+  "version": "0.1.0",
+  "description": "Thunk-level error reporting for Ops Monitor ingest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luckee-core/monitor-react-native.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": ["dist", "README.md"],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
