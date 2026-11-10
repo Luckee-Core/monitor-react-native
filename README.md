@@ -15,6 +15,7 @@ import { initMonitor, logThunkException } from '@luckee-core/monitor-react-nativ
 initMonitor({
   ingestUrl: process.env.EXPO_PUBLIC_OPS_MONITOR_INGEST_URL!,
   publicIngestKey: process.env.EXPO_PUBLIC_OPS_MONITOR_INGEST_KEY!,
+  crudBackend: 'firestore',
   environment: 'production',
   release: process.env.EXPO_PUBLIC_APP_RELEASE,
 });
@@ -23,8 +24,8 @@ initMonitor({
 logThunkException({
   event: 'failedToSaveExample',
   error,
-  collection: 'example',
-  entityId: id,
+  resource: 'example',
+  resourceId: id,
 });
 ```
 

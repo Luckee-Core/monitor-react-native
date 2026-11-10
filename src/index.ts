@@ -1,6 +1,7 @@
 export type {
   InitMonitorConfig,
   LogThunkExceptionParams,
+  MonitorCrudBackend,
   MonitorSeverity,
 } from './types';
 export { initMonitor, isMonitorInitialized } from './init-monitor';
